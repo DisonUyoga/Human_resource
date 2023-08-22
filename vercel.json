@@ -1,12 +1,12 @@
 {
     "routes":[
        {
-        "src":"/",
-        "dist":"/"
+        "src":"/"
+        
        },
        {
-        "src":"/login",
-        "dist":"/"
+        "src":"/login"
+        
        }
     ]
 }
