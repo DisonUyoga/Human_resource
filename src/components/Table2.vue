@@ -55,30 +55,34 @@
             </tr>
         </thead>
         <tbody>
-            <tr class="border-b border-gray-200 dark:border-gray-700">
+            <tr 
+            class="border-b border-gray-200 dark:border-gray-700"
+            v-for=" calender in calenders"
+            :key="calender.id"
+            >
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
-                    1
+                    {{calender.serial_number}}
                 </th>
                 <td class="px-6 py-4">
-                    Course title
+                    {{calender.course_title}}
                 </td>
                 <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
-                    date
+                    {{calender.date}}
                 </td>
                 <td class="px-6 py-4">
-                    duration
+                    {{calender.duration}}
                 </td>
                 <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
-                    venue
+                    {{calender.venue}}
                 </td>
                 <td class="px-6 py-4">
-                    cost
+                    ksh.{{calender.cost}}
                 </td>
                 <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
-                    dpd
+                    {{calender.cpd}}
                 </td>
                 <td class="px-6 py-4">
-                    <button class="bg-teal-500 px-2 py-4 text-white rounded-lg">Register</button>
+                    <button class="bg-teal-500 px-2 py-4 text-white rounded-lg" @click="registration(calender.id)">Register</button>
                 </td>
             </tr>
             
@@ -97,6 +101,19 @@
 
 <script>
 export default {
+    props:{
+        calenders: Object
+    },
+    data(){
+        return{
+
+        }
+    },
+    methods:{
+        registration(id){
+            console.log('registration id:', id)
+        }
+    }
 
 }
 </script>
